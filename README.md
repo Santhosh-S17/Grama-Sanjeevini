@@ -71,4 +71,4 @@ Grama-Sanjeevini connects nearby pharmacies into a shared rural healthcare netwo
 
 # 👨‍💻 Developed By
 
-Santhosh Royal
+Santhosh 
