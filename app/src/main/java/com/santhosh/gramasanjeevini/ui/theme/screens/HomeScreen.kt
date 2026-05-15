@@ -37,6 +37,14 @@ import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Icon
 import androidx.compose.ui.graphics.Brush
 
+import android.annotation.SuppressLint
+
+import com.google.android.gms.location.LocationServices
+import androidx.compose.ui.platform.LocalContext
+import android.Manifest
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+
 fun isNearExpiry(expiryDate: String): Boolean {
 
     return try {
@@ -94,10 +102,51 @@ fun HomeScreen(navController: NavHostController) {
         it.name.contains(searchText, ignoreCase = true)
     }
 
-    val userLatitude = 12.9716
-    val userLongitude = 77.5946
+
+    var userLatitude by remember {
+        mutableStateOf(0.0)
+    }
+
+    var userLongitude by remember {
+        mutableStateOf(0.0)
+    }
+    val context = LocalContext.current
+
+    val fusedLocationClient = remember {
+        LocationServices.getFusedLocationProviderClient(context)
+    }
+
+    @SuppressLint("MissingPermission")
+    fun getUserLocation() {
+
+        fusedLocationClient.lastLocation
+            .addOnSuccessListener { location ->
+
+                if (location != null) {
+
+                    userLatitude = location.latitude
+                    userLongitude = location.longitude
+                }
+            }
+    }
+    val locationPermissionLauncher =
+        rememberLauncherForActivityResult(
+            contract = ActivityResultContracts.RequestPermission()
+        ) { isGranted ->
+
+            if (isGranted) {
+
+                getUserLocation()
+            }
+        }
+
 
     LaunchedEffect(Unit) {
+
+        locationPermissionLauncher.launch(
+            Manifest.permission.ACCESS_FINE_LOCATION
+        )
+        getUserLocation()
 
         FirebaseFirestore.getInstance()
             .collection("medicines")
