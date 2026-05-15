@@ -147,9 +147,9 @@ Shift + F10
 # 📸 Screenshots
 
 <h3>Role Selection</h3>
-<img src="screenshots/role_selection.jpeg" width="250"/>)
+<img src="screenshots/role_selection.png" width="250"/>)
 <h3>Home Screen</h3>
-<img src="mgscreenshots/home_screen.jpeg"width="250"/>)
+<img src="screenshots/home_screen.jpeg"width="250"/>)
 <h3>Owner Dashboard</h3>
 <img src="screenshots/owner_dashboard.jpeg"width="250"/>)
 <h3>Add Medicine</h3>
@@ -174,21 +174,20 @@ The project supports full CRUD operations using Firebase Firestore.
 * Update Medicine Stock
 * Delete Medicines
 
----
+
 
 # 🔐 Authentication Flow
 
 Role Selection
-    ↓
+↓
 Owner Register
-    ↓
+↓
 Owner Login
-    ↓
+↓
 Owner Dashboard
 
 Firebase Authentication is used for secure owner registration and login.
 
----
 
 # 🌟 Key Highlights
 
