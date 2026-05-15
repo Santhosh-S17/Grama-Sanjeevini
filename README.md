@@ -179,11 +179,11 @@ The project supports full CRUD operations using Firebase Firestore.
 # 🔐 Authentication Flow
 
 Role Selection
-↓
+     ↓
 Owner Register
-↓
+     ↓
 Owner Login
-↓
+     ↓
 Owner Dashboard
 
 Firebase Authentication is used for secure owner registration and login.
