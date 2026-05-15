@@ -161,7 +161,7 @@ Shift + F10
 <h3>Emergency Medicines Screen</h3>
 <img src="screenshots/emergency_medicine.jpeg" width="250"/>
 
-```
+
 
 ---
 
