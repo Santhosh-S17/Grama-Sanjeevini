@@ -12,6 +12,7 @@ import com.santhosh.gramasanjeevini.ui.theme.screens.RoleSelectionScreen
 import com.santhosh.gramasanjeevini.ui.theme.screens.OwnerLoginScreen
 import com.santhosh.gramasanjeevini.ui.screens.OwnerHomeScreen
 import com.santhosh.gramasanjeevini.ui.theme.screens.ManageMedicineScreen
+import com.santhosh.gramasanjeevini.ui.theme.screens.OwnerRegisterScreen
 
 @Composable
 fun AppNavigation() {
@@ -52,6 +53,9 @@ fun AppNavigation() {
         }
         composable("manageMedicine") {
             ManageMedicineScreen(navController)
+        }
+        composable("ownerRegister") {
+            OwnerRegisterScreen(navController)
         }
     }
 }

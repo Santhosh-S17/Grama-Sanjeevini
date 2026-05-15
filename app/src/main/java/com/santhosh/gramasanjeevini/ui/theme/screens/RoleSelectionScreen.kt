@@ -140,7 +140,7 @@ fun RoleSelectionScreen(
 
                 Button(
                     onClick = {
-                        navController.navigate("ownerLogin")
+                        navController.navigate("ownerRegister")
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) {
